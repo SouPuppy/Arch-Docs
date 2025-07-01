@@ -36,7 +36,7 @@ export <type>
 export { <type>, ... }
 ```
 
-**Example**
+***Example***
 
 ```
 namespace HumanResource {
@@ -66,7 +66,19 @@ import <module>
 > To locate a module, the resolver searches in the following order:
 >
 > - Relative to the current file, or
-> - Under paths defined in the `ARCH_PATH` environment variable prefixed by `@`
+> - Under paths defined in the `ARCH_PATH` environment variable
+>
+> or from another package:
+>
+> - Identify by a `@` prefix
+
+***Example***
+
+```
+import @std/vector
+```
+
+
 
 **Import a module and assign it an alias**
 
@@ -81,7 +93,7 @@ import <module>
 <alias> := <module>
 ```
 
-**Example**
+***Example***
 
 ```
 import @HumanResource
@@ -106,7 +118,7 @@ using <modlue>
 using { <type> ... } from <module>
 ```
 
-**Example**
+***Example***
 
 ```
 using @common
