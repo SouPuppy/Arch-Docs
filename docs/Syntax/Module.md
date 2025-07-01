@@ -9,7 +9,7 @@ A `Module` is a collection of types grouped within a namespace, which can be vie
 By staring with  `namespace <ModuleName>` in a file, we declared the whole file as a  module
 
 ```
-namespace <ModuleName>
+namespace <ModuleName>;
 ```
 
 In more general case, we can define a module inside a file, using curly brackets to explicitly delimit its content

@@ -1,6 +1,18 @@
 # Arch
 
-> A project management toolchain powered by type theory - An uncompromising design.
+> Arch is all about types.
 
-Arch is a modern project management toolchain that integrates version control, third-party dependency management into a unified, type-safe system. It aims to provide a structured, verifiable, and expressive foundation for building, evolving, and maintaining software projects — powered by principles from type theory.
+### Intuitions
 
+- **Bold** terms denote **mathematical concepts** or keywords in category theory  
+- `inline code` represents keywords or identifiers from the **programming domain**  
+- `<name>` indicates a **polymorphic placeholder**, often used to represent generic or abstract types
+- `[]` indicates the expression inside is optional
+
+## Reference
+
+> Chapters marked with an **asterisk (`*`)** represents a **core component of Type Theory**. These chapters are foundational to understanding the structural and higher-dimensional properties of types within Arch.
+
+**Polymorphism**
+
+- [*Subtyping]()
