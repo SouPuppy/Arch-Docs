@@ -6,6 +6,12 @@ repo_name: SouPuppy/Arch
 
 theme:
   name: material
+  # navigation settings
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+
 markdown_extensions:
   # enable math rendering with KaTeX
   - pymdownx.arithmatex:
@@ -18,6 +24,13 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  # grids for tables
+  - attr_list
+  - md_in_html
+  # enable emoji support
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra_javascript:
   - javascripts/katex.js
