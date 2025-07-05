@@ -1,9 +1,0 @@
-name: Arch-Docs
-channels:
-  - defaults
-dependencies:
-  - python=3.12
-  - pip
-  - pip:
-    - mkdocs-material
-    - pymdown-extensions
