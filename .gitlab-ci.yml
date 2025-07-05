@@ -20,11 +20,10 @@ build-site:
 deploy-site:
   stage: deploy
   script:
-    - apt install -y rsync
+    - apt-get update
+    - apt-get install -y rsync openssh-client
     - mkdir -p ~/.ssh
-    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - echo "$SSH_PRIVATE_KEY_B64" | base64 -d > ~/.ssh/id_rsa
     - chmod 600 ~/.ssh/id_rsa
-    - ssh-keyscan $DEPLOY_IP >> ~/.ssh/known_hosts
+    - ssh-keyscan -H $DEPLOY_IP >> ~/.ssh/known_hosts
     - rsync -avz --delete site/ $SSH_USER@$DEPLOY_IP:$DEPLOY_DIR
-  only:
-    - main
