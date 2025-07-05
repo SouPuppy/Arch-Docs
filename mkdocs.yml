@@ -1,0 +1,10 @@
+site_name: Arch Docs
+site_url: https://mydomain.org/mysite
+theme:
+  name: material
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+extra_javascript:
+  - javascripts/mathjax.js
+  - javascripts/mathjax/es5/tex-mml-chtml.js

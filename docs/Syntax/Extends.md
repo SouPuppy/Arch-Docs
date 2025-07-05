@@ -1,4 +1,4 @@
-# Inheritance
+# Extends
 
 ### Syntax
 
