@@ -5,9 +5,11 @@
 To say that a *term* $t$ *has type* $T$ means that $t$ is a canonical or computable object of type $T$, or that $t$ can be evaluated (normalized) to a canonical form belonging to $T$.
 
 This is written as:
+
 $$
 t : T
 $$
+
 where $t$ is the term and $T$ is its type.
 
 In other words, types classify terms. If $t : T$, then $t$ is said to be an *inhabitant* of the type $T$.

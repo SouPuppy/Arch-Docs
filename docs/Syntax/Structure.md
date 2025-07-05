@@ -5,13 +5,17 @@
 **Dependent Pair**
 
 When we want to group 2 types together, a natural way is to use the cartesian product:
+
 $$
 \text{type}_1 \times \text{type}_2
 $$
+
 In a dependent type system, a $\Sigma$-Type is a generalization of the cartesian product type, written as:
+
 $$
 \Sigma_{(x : A)} B(x)
 $$
+
 This denotes a pair $\langle x, y \rangle$ where:
 
 - $x : A$
@@ -21,16 +25,21 @@ This denotes a pair $\langle x, y \rangle$ where:
 
 A structure is essentially a syntactic and semantic wrapper around nested $\Sigma$-types (dependent pair types).
  Just like a continuous Cartesian product combines multiple independent types as:
+
 $$
 \text{type}_1 \times \text{type}_2 \times \cdots \times \text{type}_n
 $$
+
 the $\Sigma$-type generalizes this idea by allowing each type to depend on the values introduced before it. A structure captures a sequence of fields, each of which may or may not depend on the previous ones.
 
 Suppose we have a sequence of types:
+
 $$
 \text{type}_1, \text{type}_2(x_1), \ldots, \text{type}_n(x_1, \ldots, x_{n-1})
 $$
+
 Then the structure corresponds mathematically to a nested dependent pair:
+
 $$
 \Sigma_{(x_1 : \text{type}_1)}\, \Sigma_{(x_2 : \text{type}_2(x_1))}\, \cdots\, \Sigma_{(x_n : \text{type}_n(x_1, \ldots, x_{n-1}))}\; \mathbb{1}
 $$

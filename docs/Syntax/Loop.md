@@ -3,20 +3,27 @@
 ### Theory
 
 A **Loop** is the process of lifting a morphism
+
 $$
 f : A \to B
 $$
+
 to a morphism
+
 $$
 F(f) : F(A) \to F(B)
 $$
+
 via a functor
+
 $$
 F : \mathcal{C} \to \mathcal{C}
 $$
+
 This lifting is intrinsic to the definition of a functor and expresses how a function can be “looped over” structured containers.
 
 Such a transformation preserves the structure imposed by $F$, and is **uniform across all functors**. It satisfies the **naturality condition**, which ensures that for any morphism $f : A \to B$, the following diagram commutes:
+
 $$
 \begin{array}{ccc}
 A & \xrightarrow{f} & B \\

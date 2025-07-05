@@ -5,6 +5,7 @@
 When we represent sets as trees &mdash; such as inductively defined structures &mdash; we can directly encode *Russell’s paradox*, for example by defining "the set of all sets that do not contain themselves", which leads to inconsistency.
 
 To avoid such paradoxes, we introduce a **hierarchy of universes**:
+
 $$
 \mathcal{U}_0 : \mathcal{U}_1 : \mathcal{U}_2 : \cdots
 $$
@@ -21,9 +22,11 @@ This stratification avoids the circular self-reference that causes paradoxes lik
 ***Example*** - Defining Dependent Types
 
 To model a collection of types varying over a given type $A$, we define a function:
+
 $$
 B : A \to \mathcal{U}
 $$
+
 where $\mathcal{U}$ is a universe.
 
 Such a function is called a **family of types**, or a **dependent type**, because the resulting type $B(a)$ depends on the input value $a : A$. This is analogous to a family of sets indexed by another set in classical set theory.

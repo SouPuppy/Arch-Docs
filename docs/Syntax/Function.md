@@ -11,22 +11,27 @@ Given types $A$ and $B$, we can construct the type of **functions** $A \to B$ wi
 1. **Direct definition**
 
 ​	Introducing a function by definition means that we introduce a function by giving it a name &mdash; let’s say, f &mdash; and saying we define $f : A \to B$ by giving an equation:
+
 $$
 f(x) \coloneqq \Phi
 $$
+
 where $x$ is a variable and $\Phi$ is an expression which may use $x$. In oreder for this to be valid, we have to check that $\Phi：B$ assuming $x:A$.
 
 2. **$\lambda$-abstraction**
 
 ​	If we don’t want to introduce a name for the function, we can use $\lambda$-abstraction. Given an expression $\Phi$ of type $B$ which may use $x:A$, as above, we write $\lambda(x:A).\Phi$ to indicate the same function defined before. Thus, we have:
+
 $$
 (\lambda(x:A).\Phi): A \to B
 $$
 
 > Note that from any function $f: A \to B$, we can construct a lambda abstraction function $\lambda x. f(x)$. Since this is by definition “the function that applies f to its argument” we consider it to be definitionally equal to $f$:
+>
 > $$
 > f \equiv (\lambda x. f (x)).
 > $$
+>
 > This equality is the **uniqueness principle for function types**, because it shows that f is uniquely determined by its values.
 
 **Currying**
@@ -36,14 +41,19 @@ Now we have learned how to define a function with one variable. To define functi
 ​	The idea of currying is to represent a function of two inputs $a:A$ and $b:B$ as a function which *one* input $a:A$ and returns *another function*, which then takes a second input $b:B$ and returns the result. That is, we consider two-variable functions to belong to an iterated function type, $f:A \to (B \to C)$. We may also write this without the parentheses, as $f: A \to B \to C$, with associativity to the right as the default convention. Then given $a : A$ and $b : B$, we can apply $f$ to $a$ and then apply the result to $b$, obtaining $f (a)(b) : C$. To avoid the proliferation of parentheses, we allow ourselves to write $f (a)(b)$ as $f (a, b)$ even though there are no products involved. When omitting parentheses around function arguments entirely, we write $f \ a \ b$ for $(f \ a) \ b$, with the default associativity now being to the left so that $f$ is applied to its arguments in the correct order.
 
 ​	Our notation for definitions with explicit parameters extends naturally to this situation.  We can define a named function $f : A \to B \to C$ by giving an equation:
+
 $$
 f(x,y) \coloneqq \Phi
 $$
+
 Alternatively, using λ-abstraction, we may write:
+
 $$
 f \coloneqq \lambda x. \lambda y. \Phi
 $$
+
 which may also be written as:
+
 $$
 f \coloneqq x \mapsto \lambda \mapsto  \Phi
 $$
@@ -53,9 +63,11 @@ $$
 >
 > Currying supports the construction of higher-order functions, reflecting the internal structure of function spaces and enabling expressive abstraction and application. Moreover, since curried functions are the generalization of Cartesian functions &mdash; we can freely mix both curried and uncurried styles in practice. Parameters can be regrouped into Cartesian product form when needed — for example, when a function logically operates on a pair or when the uncurried form provides a more accurate reflection of the intended structure.
 > A typical hybrid example would be:
+>
 > $$
 > f : (A \times B) \to C \to D
 > $$
+>
 > where the function first processes a pair and then returns a curried function.
 
 ---

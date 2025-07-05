@@ -5,10 +5,13 @@
 The **if-expression** acts as a value selector conditioned on a Boolean. Its resulting type is determined by the common type of $t_2$ and $t_3$, with the Boolean condition $t_1$ controlling which branch is chosen.
 
 An `if`-expression in surface syntax is written as:
+
 $$
 \text{if} \ t_1 \ \text{then} \ t_2 \ \text{else} \ t_3
 $$
+
 **Typing Rule**
+
 $$
 \frac
   {\Gamma \vdash t_1 : \mathbb{B} \quad \Gamma \vdash t_2 : T \quad \Gamma \vdash t_3 : T}
@@ -28,18 +31,22 @@ The evaluation of an `if` expression depends on the value of $t_1$:
 - If $t_1$ evaluates to `false`, the expression reduces to $t_3$
 
 Formally:
+
 $$
 \text{if true then } t_2 \text{ else } t_3 \leadsto t_2 \\
 \text{if false then } t_2 \text{ else } t_3 \leadsto t_3 \\
 $$
+
 This reduction step assumes that $t_1$ is evaluated first (e.g., call-by-value or eager evaluation), and ensures that only one of the branches is actually executed.
 
 ### Syntax
 
 An `if`-expression in surface syntax is written as:
+
 $$
 \text{if} \ t_1 \ \text{then} \ t_2 \ \text{else} \ t_3
 $$
+
 In `Arch`, this is represented as:
 
 ```

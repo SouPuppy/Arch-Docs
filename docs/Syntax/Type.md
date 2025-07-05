@@ -4,6 +4,7 @@
 
 `Arch` comes equipped with some set $\mathcal{A}$ of base types, with no primitive operations on them at all. This is accomplished simply by including the elements of $\mathcal{A}$ (ranged over by the
 metavariable $\mathcal{A}$) in the set of types:
+
 $$
 \mathcal{A} \in \texttt{Type}
 $$

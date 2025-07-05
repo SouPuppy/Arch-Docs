@@ -1,10 +1,24 @@
 site_name: Arch Docs
-site_url: https://mydomain.org/mysite
+site_url: https://soupup.online
 theme:
   name: material
 markdown_extensions:
+  # enable math rendering with KaTeX
   - pymdownx.arithmatex:
       generic: true
+  # syntax highlighting on code blocks and inline code blocks
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
 extra_javascript:
-  - javascripts/mathjax.js
-  - javascripts/mathjax/es5/tex-mml-chtml.js
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css

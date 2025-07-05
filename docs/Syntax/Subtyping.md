@@ -5,6 +5,7 @@
 If $S$ is a subtype of $T$, or equivalently, $T$ is the supertype of $S$, the subtyping relation (written as $S \sqsubseteq T$) means that any term of type $S$ can *safely be used* in *any context* where a term of type $T$ is expected.
 
 The subsumption rule can be expressed as:
+
 $$
 \frac{S \sqsubseteq T \quad \Gamma \vdash e:S }{\Gamma \vdash e:T}
 $$
