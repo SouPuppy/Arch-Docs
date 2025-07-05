@@ -1,6 +1,6 @@
 image: python:3.12
 
-stage:
+stages:
   - build
   - deploy
 
