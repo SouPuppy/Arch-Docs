@@ -4,6 +4,10 @@ stages:
   - build
   - deploy
 
+variables:
+  DEPLOY_DIR: /var/www/arch-docs/
+  SSH_USER: root
+
 build-site:
   stage: build
   script:
@@ -21,6 +25,6 @@ deploy-site:
     - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
     - chmod 600 ~/.ssh/id_rsa
     - ssh-keyscan $DEPLOY_IP >> ~/.ssh/known_hosts
-    - rsync -avz --delete site/ user@$DEPLOY_IP:/var/www/arch-docs/
+    - rsync -avz --delete site/ $SSH_USER@$DEPLOY_IP:$DEPLOY_DIR
   only:
     - main
