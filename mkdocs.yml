@@ -1,5 +1,9 @@
 site_name: Arch Docs
 site_url: https://soupup.online
+
+repo_url: https://github.com/SouPuppy/Arch
+repo_name: SouPuppy/Arch
+
 theme:
   name: material
 markdown_extensions:
