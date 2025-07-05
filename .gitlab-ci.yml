@@ -1,0 +1,26 @@
+image: python:3.12
+
+stage:
+  - build
+  - deploy
+
+build-site:
+  stage: build
+  script:
+    - pip install -r requirements.txt
+    - mkdocs build
+  artifacts:
+    paths:
+      - site/
+
+deploy-site:
+  stage: deploy
+  script:
+    - apt install -y rsync
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh-keyscan $DEPLOY_IP >> ~/.ssh/known_hosts
+    - rsync -avz --delete site/ user@$DEPLOY_IP:/var/www/arch-docs/
+  only:
+    - main
